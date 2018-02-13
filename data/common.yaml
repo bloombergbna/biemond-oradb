@@ -5,17 +5,17 @@ oradb::exec_path:         '/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbi
 oradb::user:             'oracle'
 oradb::group:            'dba'
 oradb::group_install:    'oinstall'
-oradb::group_oper:       'oper'
+oradb::group_oper:       'dba'
 
-oradb::grid::user:          'grid'
-oradb::grid::group:         'asmdba'
+oradb::grid::user:          'oracle'
+oradb::grid::group:         'dba'
 oradb::grid::group_install: 'oinstall'
-oradb::grid::group_oper:    'asmoper'
-oradb::grid::group_asm:     'asmadmin'
+oradb::grid::group_oper:    'dba'
+oradb::grid::group_asm:     'dba'
 
-oradb::tmp_dir:           '/tmp'
-oradb::download_dir:      '/var/tmp/install'
-oradb::module_mountpoint: 'oradb/'
+oradb::tmp_dir:           '/oradata/tmp'
+oradb::download_dir:      '/apps/oracle/software'
+oradb::module_mountpoint: '/oradata/'
 
 oradb::version:           '12.1'
 oradb::listener_port:     1521
@@ -133,12 +133,12 @@ oradb::database::action:                'create'
 oradb::database::character_set:         'AL32UTF8'
 oradb::database::nationalcharacter_set: 'UTF8'
 oradb::database::sample_schema:         'TRUE'
-oradb::database::memory_percentage:     40
+oradb::database::memory_percentage:     20
 oradb::database::memory_total:          800
 oradb::database::database_type:         'MULTIPURPOSE' # MULTIPURPOSE|DATA_WAREHOUSING|OLTP
 oradb::database::em_configuration:      'NONE'  # CENTRAL|LOCAL|ALL|NONE
 oradb::database::storage_type:          'FS' #FS|CFS|ASM
 oradb::database::asm_diskgroup:         'DATA'
 
-oradb::installdb::database_type:        'SE'
+oradb::installdb::database_type:        'EE'
 
