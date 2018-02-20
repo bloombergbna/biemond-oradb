@@ -5,22 +5,22 @@
 #
 # @example install Oracle database
 #
-#  oradb::installdb{ 'db_linux-x64':
-#      version                => '11.2.0.4',
-#      file                   => 'p13390677_112040_Linux-x86-64',
-#      database_type          => 'EE',
-#      ora_inventory_dir      => '/app',
-#      oracle_base            => '/app/oracle',
-#      oracle_home            => '/app/oracle/product/11.2/db',
-#      user_base_dir          => '/home',
-#      user                   => 'oracle',
-#      group                  => 'dba',
-#      group_install          => 'oinstall',
-#      group_oper             => 'oper',
-#      download_dir           => '/var/tmp/install',
-#      remote_file            => false,
-#      puppet_download_mnt_point => '/software',
-#  }
+  oradb::installdb{ 'db_linux-x64':
+      version                => '12.1.0.2.0',
+      file                   => 'linuxamd64_12102_database*',
+      database_type          => 'EE',
+      ora_inventory_dir      => '/apps/oracle/oraInventory',
+      oracle_base            => '/apps/oracle',
+      oracle_home            => '/apps/oracle/12.1.0.2/',
+      user_base_dir          => '/apps/oracle',
+      user                   => 'oracle',
+      group                  => 'dba',
+      group_install          => 'oinstall',
+      group_oper             => 'dba',
+      download_dir           => '/oradata/software',
+      remote_file            => false,
+      puppet_download_mnt_point => '/oradata/software',
+  }
 #    
 # @param version Oracle installation version
 # @param file filename of the installation software
